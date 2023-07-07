@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Validación de Formulario con Javascript</title>
 	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="usercss.css">
 </head>
+
 <body>
 	<main>
 		<form action="" class="formulario" id="formulario">
-			
+
 			<!-- Grupo: Nombre -->
 			<div class="formulario__grupo" id="grupo__nombre">
 				<label for="nombre" class="formulario__label">Nombre</label>
@@ -19,37 +21,36 @@
 					<input type="text" class="formulario__input" name="nombre" id="nombre">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
-				<p class="formulario__input-error">El nombre tiene que ser de máximo 25 caracteres y solo puede contener numeros, letras y guion bajo.</p>
+				<p class="formulario__input-error">El nombre tiene que ser de máximo 25 caracteres y solo puede contener
+					numeros, letras y guion bajo.</p>
 			</div>
 
-            <!-- Grupo: Apellido -->
-            <div class="formulario__grupo" id="grupo__apellido">
+			<!-- Grupo: Apellido -->
+			<div class="formulario__grupo" id="grupo__apellido">
 				<label for="apellido" class="formulario__label">Apellido</label>
 				<div class="formulario__grupo-input">
 					<input type="text" class="formulario__input" name="apellido" id="apellido">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
-				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
+					numeros, letras y guion bajo.</p>
 			</div>
 
 			<!-- Grupo: Fecha de Nacimiento-->
 			<div class="formulario__grupo" id="grupo__fechanac">
 				<label for="fechanac" class="formulario__label">Fecha de Nacimiento</label>
 				<div class="formulario__grupo-input">
-					<input type="date" class="formulario__input" name="fechanac" id="fechanac">
+					<input type="date" class="formulario__input" name="fechanac" id="fechaNacimiento" max="01/06/2023" required>
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
-				<p class="formulario__input-error">El CC Usuario tiene que ser de 10 a 20 dígitos y solo puede contener numeros y letras.</p>
 			</div>
 
 			<!-- Grupo: Edad-->
-			<div class="formulario__grupo" id="grupo__edad">
+			<div>
 				<label for="edad" class="formulario__label">Edad</label>
-				<div class="formulario__grupo-input">
-					<input type="tel" class="formulario__input" name="edad" id="edad">
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				<div >
+					<p id="edad"></p>
 				</div>
-				<p class="formulario__input-error">El CC Usuario tiene que ser de 10 a 20 dígitos y solo puede contener numeros y letras.</p>
 			</div>
 
 			<!-- Grupo: Usuario -->
@@ -59,17 +60,8 @@
 					<input type="text" class="formulario__input" name="usuario" id="usuario">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
-				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
-			</div>
-
-			<!-- Grupo: CCUsuario -->
-			<div class="formulario__grupo" id="grupo__ccusuario">
-				<label for="ccusuario" class="formulario__label">CC Usuario</label>
-				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="ccusuario" id="ccusuario">
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
-				</div>
-				<p class="formulario__input-error">El CC Usuario tiene que ser de 10 a 20 dígitos y solo puede contener numeros y letras.</p>
+				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
+					numeros, letras y guion bajo.</p>
 			</div>
 
 			<!-- Grupo: Contraseña -->
@@ -92,38 +84,21 @@
 				<p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
 			</div>
 
-			<!-- Grupo: Direccion -->
-			<div class="formulario__grupo" id="grupo__direccion">
-				<label for="direccion" class="formulario__label">Direccion</label>
-				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="direccion" id="direccion">
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
-				</div>
-				<p class="formulario__input-error">La direccion debe iniciar por (cll, cra, av, anv, trans).</p>
-			</div>
-
 			<!-- Grupo: Correo Electronico -->
 			<div class="formulario__grupo" id="grupo__correo">
 				<label for="correo" class="formulario__label">Correo Electrónico</label>
 				<div class="formulario__grupo-input">
-					<input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+					<input type="email" class="formulario__input" name="correo" id="correo"
+						placeholder="correo@correo.com">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
-				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
-			</div>
-
-			<!-- Grupo: Teléfono -->
-			<div class="formulario__grupo" id="grupo__telefono">
-				<label for="telefono" class="formulario__label">Teléfono</label>
-				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="4491234567">
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
-				</div>
-				<p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y
+					guion bajo.</p>
 			</div>
 
 			<div class="formulario__mensaje" id="formulario__mensaje">
-				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario
+					correctamente. </p>
 			</div>
 
 			<div class="formulario__grupo formulario__grupo-btn-enviar">
@@ -138,4 +113,5 @@
 	<script src="formulario.js"></script>
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
