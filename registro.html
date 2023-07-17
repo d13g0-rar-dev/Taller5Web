@@ -7,12 +7,37 @@
 	<title>Validación de Formulario con Javascript</title>
 	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="registro.css">
+	<script src="formulario.js"></script>
 </head>
 
 <body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				</button>
+				<a class="navbar-brand" href="index.html">Menú</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="registro.html">Registro de usuarios</a></li>
+					<li><a href="grilla.html">Grilla</a></li>
+				</ul>
+			</div>
+		</div>
+</nav>
 	<main>
-		<form action="" class="formulario" id="formulario">
+		<form action="/cv/dataCV" class="formulario" id="formulario" method="post">
 
 			<!-- Grupo: Nombre -->
 			<div class="formulario__grupo" id="grupo__nombre">
@@ -96,21 +121,60 @@
 					guion bajo.</p>
 			</div>
 
+			
+
+			<br>
 			<div class="formulario__mensaje" id="formulario__mensaje">
 				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario
 					correctamente. </p>
 			</div>
-
-			<div class="formulario__grupo formulario__grupo-btn-enviar">
-				<button type="submit" class="formulario__btn">Enviar</button>
-				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
-			</div>
+		</div>
 		</form>
 
+			<div class="d-flex justify-content-center">
+				<label class="col-md-4 control-label">¿Ha sufrido enfermedades contagiosas?</label>
+				<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+								<fieldset>
+										<div>
+												<input type="radio" id="enf_si" name="enf" value=true>
+												<label for="enf_si">Sí</label>
+										</div>
+
+										<div>
+												<input type="radio" id="enf_no" name="enf" value=false>
+												<label for="enf_no">No</label>
+										</div>
+								</fieldset>
+						</div>
+				</div>
+		</div>
+
+		<br>
+
+		<div id="enfermedades" class="enfermedades">
+				<div class="d-flex justify-content-center">
+						<label class="col-md-4 control-label">¿Cuáles?</label>
+						<div class="col-md-4 inputGroupContainer">
+								<div class="input-group">
+										<input name="enfer" id="enfer" placeholder="Enfermedades" class="form-control"
+												type="text">
+								</div>
+						</div>
+				</div>
+
+
+		</div>
+
+		<div class="d-flex justify-content-center">
+			<label class="col-md-4 control-label"></label>
+			<div class="col-md-4">
+					<button type="button" class="btn btn-warning">Registrar<span
+									class="glyphicon glyphicon-send"></span> </button>
+			</div>
 
 	</main>
 
-	<script src="formulario.js"></script>
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>
 

@@ -152,4 +152,38 @@ window.addEventListener('load', function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+
+	const enfermedades = document.getElementById('#enfermedades');
+	const enf_si = document.getElementById('#enf_si');
+	const enf_no = document.getElementById('#enf_no');
+
+	enf_si.addEventListener('input', function () {
+		validarEnfermedades_si();
+	});
+
+	enf_no.addEventListener('input', function () {
+			validarEnfermedades_no();
+	});
+
+	function validarEnfermedades_si() {
+		if (enf_si.value) {
+				enfermedades.classList.add('show');
+	
+		} else {
+				enfermedades.classList.remove('show');
+		}
+	}
+
+	function validarEnfermedades_no() {
+		if (enf_no.value) {
+				enfermedades.classList.remove('show');
+	
+		} else {
+				enfermedades.classList.add('show');
+		}
+	}
+	
+})
+
 
