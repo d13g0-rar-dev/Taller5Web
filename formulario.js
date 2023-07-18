@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const errorNombre = document.getElementById('error-nombre');
     const errorNombre2 = document.getElementById('error-nombre2');
     const errorApellido = document.getElementById('error-apellido');
+    const errorApellido2 = document.getElementById('error-apellido2');
     const errorUsuario = document.getElementById('error-usuario');
+    const errorUsuario2 = document.getElementById('error-usuario2');
     const errorConf_usuario = document.getElementById('error-conf_usuario');
     const errorContrasena = document.getElementById('error-contrasena');
     const errorConf_contrasena = document.getElementById('error-conf_contrasena');
@@ -28,6 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     apellido.addEventListener('input', function () {
+        validarApellido2();
+    });
+
+    apellido.addEventListener('input', function () {
         validarApellido();
     });
 
@@ -37,6 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     usuario.addEventListener('input', function () {
         validarUsuario();
+    });
+
+    usuario.addEventListener('input', function () {
+        validarUsuario2();
     });
 
     conf_usuario.addEventListener('input', function () {
@@ -93,6 +103,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function validarApellido2() {
+        const alphanumericRegex = /^[a-zA]+$/;
+        if (!alphanumericRegex.test(apellido.value)) {
+            apellido.classList.add('error');
+            errorApellido2.classList.add('show');
+        } else {
+            apellido.classList.remove('error');
+            errorApellido2.classList.remove('show');
+        }
+    }
+
     function calcularEdad() {
         var fechaNacimiento = new Date(fe_nac.value);
         var fechaActual = new Date();
@@ -103,13 +124,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function validarUsuario() {
-        const alphanumericRegex = /^[a-zA-Z0-9]+$/;
-        if (!alphanumericRegex.test(usuario.value)) {
+        if (usuario.value == null || usuario.value == '') {
+            console.log('asdasd');
             usuario.classList.add('error');
             errorUsuario.classList.add('show');
         } else {
             usuario.classList.remove('error');
             errorUsuario.classList.remove('show');
+        }
+    }
+
+    function validarUsuario2() {
+        const alphanumericRegex = /^[a-zA-Z0-9]+$/;
+        if (!alphanumericRegex.test(usuario.value)) {
+            usuario.classList.add('error');
+            errorUsuario2.classList.add('show');
+        } else {
+            usuario.classList.remove('error');
+            errorUsuario2.classList.remove('show');
         }
     }
 

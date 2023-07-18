@@ -46,7 +46,7 @@
 						Registro de usuario
 					</legend>
 
-					<form action="/cv/dataCV" method="post" enctype="multipart/form-data">
+					<form action="/cv/dataCV" class="formulario" id="formulario" method="post">
 
 						<!-- Grupo: Nombre -->
 						<div class="d-flex justify-content-center" id="grupo__nombre">
@@ -56,7 +56,7 @@
 									<input type="text" name="nombre" id="nombre" placeholder="Ingrese nombre" class="form-control">
 								</div>
 							</div>
-
+						</div>
 						<div id="error-nombre2" class="error-message">El nombre debe ser de máximo 25 caracteres y solo puede contener letras.</div>
 						<br>
 						<br>
@@ -64,59 +64,69 @@
 
 						<br>
 
-						<div class="d-flex justify-content-center">
-							<label class="col-md-4 control-label">Apellido</label>
+						<!-- Grupo: Apellido -->	
+						<div class="d-flex justify-content-center" id="grupo__apellido">
+							<label for="apellido" class="col-md-4 control-label">Apellido</label>
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
-									<input name="apellido" id="apellido" placeholder="Apellido" class="form-control"
-										type="text">
+									<input type="text" name="apellido" id="apellido" placeholder="Ingrese apellido" class="form-control">
 								</div>
 							</div>
 						</div>
-						<div id="error-apellido" class="error-message">El apellido no puede ser vacio.</div>
+						<div id="error-apellido2" class="error-message">El apellido debe ser de máximo 25 caracteres y solo puede contener letras.</div>
+						<br>
+						<br>
+						<div id="error-apellido" class="error-message">El apellido no puede estar vacio.</div>
+
 						<br>
 
-						<div class="d-flex justify-content-center">
-							<label class="col-md-4 control-label">Fecha de nacimiento</label>
+						<!-- Grupo: Fecha de Nacimiento-->
+						<div class="d-flex justify-content-center" id="grupo__fechanac">
+							<label for="fechanac" class="col-md-4 control-label">Fecha de nacimiento</label>
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
-									<input name="fe_nac" id="fe_nac" placeholder="Fecha de nacimiento" class="form-control"
-										type="date">
+									<input name="fe_nac" id="fe_nac" placeholder="Fecha de nacimiento" class="form-control" type="date">
 								</div>
 							</div>
 						</div>
-
 						<div id="edad_fec" class="edad-message"></div>
+
+						<br>
+						<br>
 						<br>
 
-
-						<div class="d-flex justify-content-center">
-							<label class="col-md-4 control-label">Correo</label>
+						<!-- Grupo: Correo Electronico -->
+						<div class="d-flex justify-content-center" id="grupo__correo">
+							<label for="correo" class="col-md-4 control-label">Correo</label>
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
-									<input name="email" id="email" placeholder="Email" class="form-control" type="text">
+									<input name="correo" id="correo" placeholder="Ingrese correo" class="form-control" type="text">
 								</div>
 							</div>
 						</div>
 
 						<br>
+						<br>
+						<br>
 
-						<div class="d-flex justify-content-center">
-							<label class="col-md-4 control-label">Usuario</label>
+						<!-- Grupo: Usuario -->
+						<div class="d-flex justify-content-center" id="grupo__usuario">
+							<label for="usuario" class="col-md-4 control-label">Usuario</label>
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
-									<input name="usuario" id="usuario" placeholder="Usuario" class="form-control"
+									<input name="usuario" id="usuario" placeholder="Ingrese usuario" class="form-control"
 										type="text">
 								</div>
 							</div>
 						</div>
 
-						<div id="error-usuario" class="error-message">El usuario no puede contener caracteres
-							extraños.</div>
+						<div id="error-usuario2" class="error-message">El usuario solo puede contener numeros y letras.</div><br><br>
+						<div id="error-usuario" class="error-message">El usuario no puede estar vacio.</div>
+
 						<br>
 
-						<div class="d-flex justify-content-center">
-							<label class="col-md-4 control-label">Confirme usuario</label>
+						<div class="d-flex justify-content-center" id="grupo__usuario2">
+							<label class="col-md-4 control-label">Confirmación de usuario</label>
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
 									<input type='text' id="conf_usuario" name="c_usuario" placeholder="Confirme usuario"
@@ -126,13 +136,17 @@
 						</div>
 
 						<div id="error-conf_usuario" class="error-message">Los usuarios no coinciden.</div>
+						
 						<br>
-
+						<br>
+						<br>
+						
+						<!-- Grupo: Contraseña -->
 						<div class="d-flex justify-content-center">
 							<label class="col-md-4 control-label">Contraseña</label>
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
-									<input type='password' id="contrasena" name="contraseña" placeholder="Contraseña"
+									<input type='password' id="contrasena" name="contraseña" placeholder="Ingrese contraseña"
 										class="form-control" type="text">
 								</div>
 							</div>
@@ -143,13 +157,14 @@
 						</div>
 
 						<br>
+						<br>
+						<br>
 
 						<div class="d-flex justify-content-center">
-							<label class="col-md-4 control-label">Confirme contraseña</label>
+							<label class="col-md-4 control-label">Confirmación de contraseña</label>
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
-									<input type='password' id="conf_contrasena" name="contraseña"
-										placeholder="Confirme contraseña" class="form-control" type="text">
+									<input type='password' id="conf_contrasena" name="contraseña" placeholder="Confirme contraseña" class="form-control" type="text">
 								</div>
 							</div>
 						</div>
@@ -160,6 +175,7 @@
 
 					</form>
 
+					<br>
 					<br>
 
 					<div class="d-flex justify-content-center">
@@ -188,8 +204,7 @@
 							<label class="col-md-4 control-label">¿Cuáles?</label>
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
-									<input name="enfer" id="enfer" placeholder="Enfermedades" class="form-control"
-										type="text">
+									<input name="enfer" id="enfer" placeholder="Ingrese enfermedades" class="form-control" type="text">
 								</div>
 							</div>
 						</div>
@@ -198,12 +213,13 @@
 					</div>
 
 					<br>
+					<br>
+					<br>
 
 					<div class="d-flex justify-content-center">
 						<label class="col-md-4 control-label"></label>
 						<div class="col-md-4">
-							<button type="button" class="btn btn-warning">Registrar<span
-									class="glyphicon glyphicon-send"></span> </button>
+							<button type="button" class="btn btn-warning">Enviar <i>	</i></button>
 						</div>
 					</div>
 
