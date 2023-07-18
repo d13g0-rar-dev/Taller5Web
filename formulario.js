@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
             errorNombre2.classList.add('show');
         } else {
             nombre.classList.remove('error');
-            errorNombre.classList.remove('show');
+            errorNombre2.classList.remove('show');
         }
     }
 
