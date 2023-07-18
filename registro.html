@@ -3,16 +3,14 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Validación de Formulario con Javascript</title>
 	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="registro.css">
 	<script src="formulario.js"></script>
 </head>
@@ -47,9 +45,10 @@
 					</legend>
 
 					<form action="/cv/dataCV" class="formulario" id="formulario" method="post">
+						<br>
 
 						<!-- Grupo: Nombre -->
-						<div class="d-flex justify-content-center" id="grupo__nombre">
+						<div id="grupo__nombre">
 							<label for="nombre" class="col-md-4 control-label">Nombre</label>
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
@@ -57,15 +56,15 @@
 								</div>
 							</div>
 						</div>
-						<div id="error-nombre2" class="error-message">El nombre debe ser de máximo 25 caracteres y solo puede contener letras.</div>
+						<div id="error-nombre2" class="error-message"><i class="fas fa-exclamation-triangle"></i>El nombre debe ser de máximo 25 caracteres y solo puede contener letras.</div>
 						<br>
 						<br>
-						<div id="error-nombre" class="error-message">El nombre no puede estar vacio.</div>
+						<div id="error-nombre" class="error-message"><i class="fas fa-exclamation-triangle"></i>El nombre no puede estar vacio.</div>
 
 						<br>
 
 						<!-- Grupo: Apellido -->	
-						<div class="d-flex justify-content-center" id="grupo__apellido">
+						<div id="grupo__apellido">
 							<label for="apellido" class="col-md-4 control-label">Apellido</label>
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
@@ -73,15 +72,15 @@
 								</div>
 							</div>
 						</div>
-						<div id="error-apellido2" class="error-message">El apellido debe ser de máximo 25 caracteres y solo puede contener letras.</div>
+						<div id="error-apellido2" class="error-message"><i class="fas fa-exclamation-triangle"></i>El apellido debe ser de máximo 25 caracteres y solo puede contener letras.</div>
 						<br>
 						<br>
-						<div id="error-apellido" class="error-message">El apellido no puede estar vacio.</div>
+						<div id="error-apellido" class="error-message"><i class="fas fa-exclamation-triangle"></i>El apellido no puede estar vacio.</div>
 
 						<br>
 
 						<!-- Grupo: Fecha de Nacimiento-->
-						<div class="d-flex justify-content-center" id="grupo__fechanac">
+						<div id="grupo__fechanac">
 							<label for="fechanac" class="col-md-4 control-label">Fecha de nacimiento</label>
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
@@ -96,7 +95,7 @@
 						<br>
 
 						<!-- Grupo: Correo Electronico -->
-						<div class="d-flex justify-content-center" id="grupo__correo">
+						<div id="grupo__correo">
 							<label for="correo" class="col-md-4 control-label">Correo</label>
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
@@ -110,7 +109,7 @@
 						<br>
 
 						<!-- Grupo: Usuario -->
-						<div class="d-flex justify-content-center" id="grupo__usuario">
+						<div id="grupo__usuario">
 							<label for="usuario" class="col-md-4 control-label">Usuario</label>
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
@@ -120,12 +119,12 @@
 							</div>
 						</div>
 
-						<div id="error-usuario2" class="error-message">El usuario solo puede contener numeros y letras.</div><br><br>
-						<div id="error-usuario" class="error-message">El usuario no puede estar vacio.</div>
+						<div id="error-usuario2" class="error-message"><i class="fas fa-exclamation-triangle"></i>El usuario solo puede contener numeros y letras.</div><br><br>
+						<div id="error-usuario" class="error-message"><i class="fas fa-exclamation-triangle"></i>El usuario no puede estar vacio.</div>
 
 						<br>
 
-						<div class="d-flex justify-content-center" id="grupo__usuario2">
+						<div id="grupo__usuario2">
 							<label class="col-md-4 control-label">Confirmación de usuario</label>
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
@@ -135,15 +134,15 @@
 							</div>
 						</div>
 
-						<div id="error-conf_usuario" class="error-message">Los usuarios no coinciden.</div>
+						<div id="error-conf_usuario" class="error-message"><i class="fas fa-exclamation-triangle"></i>Los usuarios no coinciden.</div>
 						
 						<br>
 						<br>
 						<br>
 						
 						<!-- Grupo: Contraseña -->
-						<div class="d-flex justify-content-center">
-							<label class="col-md-4 control-label">Contraseña</label>
+						<div class="d-flex justify-content-center" id="grupo__password">
+							<label for="password" class="col-md-4 control-label">Contraseña</label>
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
 									<input type='password' id="contrasena" name="contraseña" placeholder="Ingrese contraseña"
@@ -152,7 +151,7 @@
 							</div>
 						</div>
 
-						<div id="error-contrasena" class="error-message">La contraseña debe tener mayusculas,
+						<div id="error-contrasena" class="error-message"><i class="fas fa-exclamation-triangle"></i>La contraseña debe tener mayusculas,
 							números, letras y caracteres especiales.
 						</div>
 
@@ -160,8 +159,8 @@
 						<br>
 						<br>
 
-						<div class="d-flex justify-content-center">
-							<label class="col-md-4 control-label">Confirmación de contraseña</label>
+						<div class="d-flex justify-content-center" id="grupo__password2">
+							<label for="password2" class="col-md-4 control-label">Confirmación de contraseña</label>
 							<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
 									<input type='password' id="conf_contrasena" name="contraseña" placeholder="Confirme contraseña" class="form-control" type="text">
@@ -169,7 +168,7 @@
 							</div>
 						</div>
 
-						<div id="error-conf_contrasena" class="error-message">Las contraseñas no coinciden.</div>
+						<div id="error-conf_contrasena" class="error-message"><i class="fas fa-exclamation-triangle"></i>Las contraseñas no coinciden.</div>
 						<br>
 
 
@@ -178,6 +177,7 @@
 					<br>
 					<br>
 
+					<!-- Grupo: Enfermedades -->
 					<div class="d-flex justify-content-center">
 						<label class="col-md-4 control-label">¿Ha sufrido enfermedades contagiosas?</label>
 						<div class="col-md-4 inputGroupContainer">
