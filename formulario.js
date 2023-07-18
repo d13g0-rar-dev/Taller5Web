@@ -12,11 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const enf_no = document.getElementById('enf_no');
     const edad = document.getElementById('edad_fec');
     const errorNombre = document.getElementById('error-nombre');
+    const errorNombre2 = document.getElementById('error-nombre2');
     const errorApellido = document.getElementById('error-apellido');
     const errorUsuario = document.getElementById('error-usuario');
     const errorConf_usuario = document.getElementById('error-conf_usuario');
     const errorContrasena = document.getElementById('error-contrasena');
     const errorConf_contrasena = document.getElementById('error-conf_contrasena');
+
+    nombre.addEventListener('input', function () {
+        validarNombre2();
+    });
 
     nombre.addEventListener('input', function () {
         validarNombre();
@@ -66,6 +71,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function validarNombre2() {
+        const alphanumericRegex = /^[a-zA]+$/;
+        if (!alphanumericRegex.test(nombre.value)) {
+            nombre.classList.add('error');
+            errorNombre2.classList.add('show');
+        } else {
+            nombre.classList.remove('error');
+            errorNombre.classList.remove('show');
+        }
+    }
+
+
     function validarApellido() {
         if (apellido.value == null || apellido.value == '') {
             apellido.classList.add('error');
@@ -81,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var fechaActual = new Date();
         var edadMilisegundos = fechaActual.getTime() - fechaNacimiento.getTime();
         var edad = Math.floor(edadMilisegundos / (1000 * 60 * 60 * 24 * 365.25));
-        edad_fec.innerHTML = "Usted tiene " + edad + " años.";
+        edad_fec.innerHTML = "Su edad es de " + edad + " años.";
         edad_fec.classList.add('show');
     }
 
